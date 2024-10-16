@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+
+<body class="w-full h-full bg-zinc-900">
+    <h1 class="pl-10 py-2 text-white text-[40px]">All User Information :</h1>
+    <main class="flex flex-wrap gap-3 p-10">
+        <% 
+        users.forEach((val)=>{
+            %>
+        <!--Card 1-->
+        <div class="max-w-[250px] rounded overflow-hidden shadow-lg bg-zinc-700 text-white">
+            <div class="imgfield w-full bg-red-500 h-52">
+                <img class="w-full h-full object-cover" src="https://th.bing.com/th/id/OIP.LtLk-vQkLJGggWTN032pPwHaLH?rs=1&pid=ImgDetMain" alt="">
+            </div>
+            <div class="px-4 py-3">
+                <div class="font-bold text-xl mb-2 capitalize"><%= val.name %></div>
+                <p class="text-[12px]">
+                    <%= val.describtion %>
+                </p>
+            </div>
+            <div class="px-6 pt-1 pb-2">
+                <span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 cursor-pointer"> Edit</span>
+                <span
+                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 cursor-pointer">Delete</span>
+            </div>
+        </div>
+        <!--Card 1-->
+        <%
+    })
+    %>
+    </main>
+</body>
+
+</html>
